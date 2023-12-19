@@ -1,1 +1,24 @@
+version: '3.9'
 
+services:
+  bd:
+    container_name: bd
+    volumes:
+      - bd_volume:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: "admin"
+      POSTGRES_PASSWORD: "root"
+      POSTGRES_DB: "bd"
+    image: postgres:14.3-alpine
+    networks: 
+      - network
+
+volumes:
+  bd_volume: 
+
+networks:
+  network:
+    driver: bridge  
