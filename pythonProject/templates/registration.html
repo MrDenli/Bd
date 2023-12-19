@@ -64,7 +64,8 @@
 
 <div class="login-container">
     <h2>Регистрация</h2>
-    <form class="login-form" action="обработчик_входа.php" method="post">
+    <!-- Добавим атрибут action и method к форме для отправки данных на сервер -->
+    <form class="login-form" action="{{ url_for('process_registration_form') }}" method="post">
         <div class="form-group">
             <label for="username">Имя пользователя:</label>
             <input type="text" id="username" name="username" required>
@@ -74,6 +75,14 @@
             <input type="text" id="surname" name="surname" required>
         </div>
         <div class="form-group">
+            <label for="sex">Ваш пол:</label>
+            <input type="text" id="sex" name="sex" required>
+        </div>
+        <div class="form-group">
+            <label for="passport_number">Ваши паспортные данные:</label>
+            <input type="text" id="passport_number" name="passport_number" required>
+        </div>
+        <div class="form-group">
             <label for="password">Пароль:</label>
             <input type="password" id="password" name="password" required>
         </div>
@@ -81,6 +90,7 @@
             <button type="submit">Зарегистрироваться</button>
         </div>
     </form>
+
 </div>
 
 </body>
