@@ -12,5 +12,9 @@ def index():
 def about():
     return render_template("student.html")
 
+@app.route('/registration')
+def registration():
+    return render_template("registration.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
