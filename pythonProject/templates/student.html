@@ -66,7 +66,15 @@
     <div class="profile-info">
         <div class="info-group">
             <label>Имя:</label>
-            <span>Иван Иванов</span>
+            <span>Иван</span>
+        </div>
+        <div class="info-group">
+            <label>Фамилия:</label>
+            <span>Иванов</span>
+        </div>
+        <div class="info-group">
+            <label>Пол:</label>
+            <span>М</span>
         </div>
         <div class="info-group">
             <label>Группа:</label>
@@ -76,7 +84,24 @@
             <label>Факультет:</label>
             <span>Факультет информационных технологий</span>
         </div>
-        <!-- Добавьте другие поля информации о студенте по необходимости -->
+        <div class="info-group">
+            <label>Оценки:</label>
+            <table border="1">
+                <tr>
+                    <th>Предмет</th>
+                    <th>Оценка</th>
+                    <th>Дата</th>
+                </tr>
+                <!-- Здесь будет цикл для вывода оценок из базы данных -->
+                {% for mark in student_marks %}
+                <tr>
+                    <td>{{ mark.subject_name }}</td>
+                    <td>{{ mark.value }}</td>
+                    <td>{{ mark.date }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
     </div>
     <div class="logout-link">
         <p><a href="выход.php">Выйти из аккаунта</a></p>
