@@ -30,6 +30,7 @@ def process_registration_form():
     surname = request.form.get('surname')
     sex = request.form.get('sex')
     passport_number = request.form.get('passport_number')
+    status = request.form.get('status')
     password = request.form.get('password')
     # Подключаемся к базе данных
     connection = connect_to_db()
@@ -49,17 +50,12 @@ def process_registration_form():
     return redirect(url_for('show_registration_form'))
 
 @app.route('/')
-@app.route('/home')
-def index():
+def show_index_form():
     return render_template("index.html")
 
 @app.route('/student')
-def about():
+def show_student_form():
     return render_template("student.html")
-
-@app.route('/registration')
-def registration():
-    return render_template("registration.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
