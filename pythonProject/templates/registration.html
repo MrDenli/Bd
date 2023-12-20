@@ -75,8 +75,18 @@
             <input type="text" id="surname" name="surname" required>
         </div>
         <div class="form-group">
-            <label for="sex">Ваш пол:</label>
-            <input type="text" id="sex" name="sex" required>
+             <label for="sex">Ваш пол:</label>
+            <select id="sex" name="sex" required>
+                <option value="М">М</option>
+                <option value="Ж">Ж</option>
+            </select>
+        </div>
+        <div class="form-group">
+             <label for="status">Кто вы ?</label>
+             <select id="status" name="status" required>
+                <option value="student">Студент</option>
+                <option value="teacher">Преподаватель</option>
+             </select>
         </div>
         <div class="form-group">
             <label for="passport_number">Ваши паспортные данные:</label>
@@ -88,6 +98,11 @@
         </div>
         <div class="form-group">
             <button type="submit">Зарегистрироваться</button>
+        </div>
+    </form>
+    <form class="login-form" action="{{ url_for('show_index_form') }}" method="get">
+        <div class="form-group">
+            <button type="submit">Назад</button>
         </div>
     </form>
 

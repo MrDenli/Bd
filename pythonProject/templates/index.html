@@ -88,9 +88,12 @@
             <button type="submit">Войти</button>
         </div>
     </form>
-    <div class="register-link">
-        <p>Нет аккаунта? <a href="регистрация.php">Зарегистрируйтесь</a></p>
-    </div>
+    <form class="login-form" action="{{ url_for('show_registration_form') }}" method="get">
+        <div class="form-group">
+            <button type="submit">Зарегистрироваться</button>
+        </div>
+    </form>
+
 </div>
 
 </body>
