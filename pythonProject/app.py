@@ -61,5 +61,13 @@ def about():
 def registration():
     return render_template("registration.html")
 
+@app.route('/teacher')
+def teacher():
+    return render_template("teacher.html")
+
+@app.route('/admin')
+def admin():
+    return render_template("admin.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
